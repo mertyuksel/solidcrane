@@ -18,12 +18,16 @@ pipeline {
 
         stage('Test') { 
             steps {
-                // 
+                script {
+                    echo 'Test Started!'
+                }
             }
         }
         stage('Deploy') { 
             steps {
-                // 
+                script {
+                    echo 'Deploy Started!'
+                }
             }
         }
     }
