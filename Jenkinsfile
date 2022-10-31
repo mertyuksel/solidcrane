@@ -40,19 +40,18 @@ pipeline {
             }
         }
 
-        stage('Test') { 
+        stage('Update ECS') {
             steps {
                 script {
-                    echo 'Test Started!'
+                    echo 'Update ECS Started!'
+
+                    // pulls the most recent image version
+                    // duplicates the current task definition
+                    // cause the service to redeploy all running tasks
+                    bat """ecs deploy main-cluster main-service"""
                 }
             }
         }
-        stage('Deploy') { 
-            steps {
-                script {
-                    echo 'Deploy Started!'
-                }
-            }
-        }
+
     }
 }
