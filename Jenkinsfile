@@ -10,6 +10,14 @@ pipeline {
     }
 
     stages {
+
+        stage('Run Tests') {
+            steps {
+                echo 'Test Started!'
+                bat """go test -v"""  
+            }
+        }
+
         stage('Build Docker Image') { 
             steps {
                 script {
