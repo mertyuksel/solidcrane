@@ -7,6 +7,8 @@ pipeline {
 
         REPOSITORY_URI = "public.ecr.aws/q5n4x1h2/main-repository"
         AWS_DEFAULT_REGION="us-east-1"
+
+        SCANNER_HOME="C:\\Programs\\sonar-scanner-4.7.0.2747-windows"
     }
 
     stages {
@@ -15,6 +17,16 @@ pipeline {
             steps {
                 echo 'Test Started!'
                 bat """go test -v"""  
+            }
+        }
+
+        stage('Static Code Analysis') {
+            steps {
+                echo 'Static Code Analysis Started!'
+                
+                withSonarQubeEnv('sq1') { 
+                     bat "${SCANNER_HOME}\\bin\\sonar-scanner"
+                }                
             }
         }
 
