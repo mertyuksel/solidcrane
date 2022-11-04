@@ -17,6 +17,8 @@ pipeline {
             steps {
                 echo 'Test Started!'
                 bat """go test -v"""  
+                bat """go test -coverprofile=\"coverage.out\" """
+                bat """go test -json > report.json"""
             }
         }
 
