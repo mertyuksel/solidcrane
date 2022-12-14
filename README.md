@@ -14,7 +14,7 @@ For more details, go through the [steps.](#steps)
 Gotten inspiration from this [article.](https://yigitdarcin.com/haydi-ufak-bir-bootcamp-projesi-yapal%C4%B1m-3c9602b93b5f)
 
 ## Project Structure
-There will be some drawings.
+![alt text](./project_structure.png)
 
 ## Steps  
 ### 1. Choosing a project  (DONE)
